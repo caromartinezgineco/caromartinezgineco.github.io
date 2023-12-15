@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("public/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+  text-align: center;
+}
+
+body {
+  scrollbar-width: none;
+  margin: 0;
+  background: rgb(126, 255, 202);
+  background: linear-gradient(
+    0deg,
+    rgba(126, 255, 202, 1) 0%,
+    rgba(127, 207, 255, 1) 100%
+  );
+
+  color: white;
+  font-family: "Montserrat";
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* TODO: reducir tamaño foto */
+.foto {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
+  border: 0.25rem white solid;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.laburo {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.bg-transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
+.laburos {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.laburo {
+  padding: 3rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  padding: 3rem;
+  margin: 1rem;
+  height: min-content;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateX(0);
+  transition: all 1s;
+  filter: blur(0);
+}
+
+@media (max-width: 425px) {
+  .laburos {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}

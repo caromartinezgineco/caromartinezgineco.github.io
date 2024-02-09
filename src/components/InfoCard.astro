@@ -1,0 +1,26 @@
+---
+interface Props {
+  icon: string;
+  shortText: string;
+  longText: string;
+}
+
+const { icon, shortText, longText } = Astro.props;
+---
+
+<!-- TODO: new line in props -->
+<div
+  class="prevToAnimation mx-auto grid w-full min-w-64 grid-rows-3 rounded-lg bg-white p-4 shadow-lg shadow-gray-400"
+>
+  <div
+    class="mb-2 flex items-center justify-start gap-5 px-6 py-4 text-xl font-bold"
+  >
+    <i class=`fa-solid ${icon}`></i>
+    <p class="text-left">{shortText}</p>
+  </div>
+  <p
+    class="row-span-2 row-start-auto px-6 pb-4 text-left text-base text-gray-700"
+  >
+    <slot />
+  </p>
+</div>

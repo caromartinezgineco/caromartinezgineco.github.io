@@ -1,0 +1,59 @@
+---
+interface Props {
+  name: string;
+  street: string;
+  linkTurno: string;
+  linkUbi: string;
+}
+
+const { name, street, linkUbi, linkTurno } = Astro.props;
+---
+
+<astro-location
+  data-name={name}
+  class="prevToAnimation z-0 flex min-h-72 w-56 flex-col justify-center gap-8 rounded-xl bg-white p-5 shadow-lg shadow-gray-400 duration-[1.5s] hover:scale-105 hover:shadow-xl hover:shadow-gray-600"
+>
+  <button class="toggleButton p-5">
+    <i class="fa-solid fa-house-medical text-center text-7xl"></i>
+    <div>
+      <h3 class="text-center text-lg font-bold">{name}</h3>
+      <h5 class="text-center text-xs text-gray-700">{street}</h5>
+    </div>
+  </button>
+  <div class="dropdown hidden flex-col rounded-xl bg-transparent">
+    <a
+      href={linkUbi}
+      class="ubi z-50 rounded-t-xl border-b border-b-gray-400 bg-gray-200 p-2 text-center duration-[1.5s] hover:bg-gray-300"
+      target="_blank">Ubicacion</a
+    >
+    <a
+      href={linkTurno}
+      class="turno z-50 rounded-b-xl bg-gray-200 p-2 text-center duration-[1.5s] hover:bg-gray-300"
+      target="_blank">Turno</a
+    >
+  </div>
+</astro-location>
+
+<script>
+  class AstroLocation extends HTMLElement {
+    constructor() {
+      super();
+
+      // Lee el mensaje del atributo data.
+      const dropdown = this.querySelector("div.dropdown");
+      const toggleButton = this.querySelector("button.toggleButton");
+      toggleButton?.addEventListener("click", () => {
+        const isHidden = dropdown?.classList.contains("hidden");
+        if (isHidden) {
+          dropdown?.classList.remove("hidden");
+          dropdown?.classList.add("flex");
+        } else {
+          dropdown?.classList.add("hidden");
+          dropdown?.classList.remove("flex");
+        }
+      });
+    }
+  }
+
+  customElements.define("astro-location", AstroLocation);
+</script>

@@ -1,0 +1,97 @@
+---
+import InfoCard from './InfoCard.astro';
+import { Image } from 'astro:assets';
+import facha from '../static/facha.webp';
+---
+
+<header
+  class="mx-auto flex h-auto w-full flex-col items-center justify-center gap-5 sm:min-h-screen sm:py-20"
+>
+  <div
+    class="flex min-h-screen w-full flex-col-reverse flex-nowrap items-center justify-center gap-36 px-10 sm:min-h-0 sm:max-w-3xl sm:flex-row sm:justify-start sm:gap-16"
+  >
+    <div class="mx-16 sm:mx-0">
+      <Image
+        class="prevToAnimation aspect-square rounded-lg object-contain sm:mx-auto sm:w-72 sm:px-0"
+        src={facha}
+        alt="doctora médica medica ginecóloga ginecologa"
+        width="200"
+        height="200"
+      />
+    </div>
+    <div class="mx-16 max-w-xl sm:mx-auto">
+      <h1 class="prevToAnimation nombre text-6xl font-extrabold">
+        Carolina Martinez Silva
+      </h1>
+      <h2 class="prevToAnimation nombre">Médica tocoginecóloga</h2>
+    </div>
+  </div>
+
+  <div class="w-full overflow-x-hidden lg:w-3/4">
+    <div
+      class="flex gap-8 overflow-x-auto scroll-smooth px-8 py-16 lg:grid lg:grid-cols-3"
+    >
+      <InfoCard shortText="Más de 20 años de experiencia" icon="fa-clock">
+        Recibida de Médica en la Universidad Nacional de Cuyo en el año 2001.
+        <br />
+        Residencia de tocoginecología terminada en el 2005
+      </InfoCard>
+      <InfoCard shortText="Formas de atención" icon="fa-user">
+        Atención particular, obras sociales y prepagas. Consultá tu plan!
+      </InfoCard>
+      <InfoCard shortText="2 consultorios" icon="fa-location-dot">
+        Me podés encontrar en Magna Salud y en Lomas centro médico. Bajá un poco
+        para sacar turno y ver las ubicaciones.
+      </InfoCard>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nombre {
+    background: linear-gradient(90deg, #22d3ee, #34d399, #3b82f6);
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+  }
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 47%;
+    }
+    50% {
+      background-position: 100% 54%;
+    }
+    100% {
+      background-position: 0% 47%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 47%;
+    }
+    50% {
+      background-position: 100% 54%;
+    }
+    100% {
+      background-position: 0% 47%;
+    }
+  }
+
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 47%;
+    }
+    50% {
+      background-position: 100% 54%;
+    }
+    100% {
+      background-position: 0% 47%;
+    }
+  }
+</style>

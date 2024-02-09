@@ -1,0 +1,39 @@
+---
+import LocationCard from "./LocationCard.astro";
+---
+
+<footer
+  class="mx-auto flex h-screen max-w-md flex-col items-center justify-center gap-20 p-5"
+>
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="prevToAnimation mt-5 text-2xl font-bold">Saca tu turno!</h1>
+    <div
+      class="m-5 flex w-full flex-col items-center justify-center gap-10 sm:flex-row"
+    >
+      <LocationCard
+        name="Magna salud"
+        street="Jorge A. Calle 151"
+        linkUbi="https://maps.app.goo.gl/3srrh6kmLLbJeG3QA"
+        linkTurno="https://wiri.la/equipos/drmagnasalud"
+      />
+      <LocationCard
+        name="Lomas centro médico"
+        street="Av Champagnat esq. Dr. Leloir Frente a Dalvian"
+        linkUbi="https://maps.app.goo.gl/vbMCMfDdDpwhCphaA"
+        linkTurno="https://www.mrturno.com/p/@carolina-martinez-silva"
+      />
+    </div>
+  </div>
+
+  <div>
+    <h1 class="prevToAnimation mt-5 text-2xl font-bold">Contactame!</h1>
+    <div class="mt-5 flex justify-center gap-10">
+      <a
+        href="https://wa.me/2614601601"
+        class="prevToAnimation grid aspect-square w-12 place-content-center rounded-md bg-gray-900 p-2 text-white"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+</footer>
